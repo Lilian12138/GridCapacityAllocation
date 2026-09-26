@@ -71,7 +71,9 @@ Reuses slope, turbine buffer, and road/railway buffer outputs from 1.1, then add
 
 **Solar Developable Area Formula**
 
-$$\text{valid\_km2} = \text{grid\_km2} - \text{limited\_km2} - \text{resident\_km2} \times 75\%$$
+```math
+\text{valid\_km2} = \text{grid\_km2} - \text{limited\_km2} - \text{resident\_km2} \times 75\%
+```
 
 > Residential areas are not fully excluded — only 75% of their area is deducted (25% utilization rate retained).
 
@@ -95,7 +97,9 @@ ArcPy Spatial Analyst (`ZonalStatisticsAsTable`) computes the mean slope per gri
 | 16.7 – 30 | 4.28 |
 | ≥ 30 | 0 (not developable) |
 
-$$\text{cap\_kw} = \text{valid\_area\_km2} \times \text{density\_MW/km}^2 \times 1000$$
+```math
+\text{cap\_kw} = \text{valid\_area\_km2} \times \text{density}\;(\mathrm{MW/km^2}) \times 1000\;\mathrm{kW/MW}
+```
 
 > Offshore grid cells (`Shengcode = 100`) apply an additional area factor of 8.
 
